@@ -28,4 +28,5 @@ LogRegR2(datamodel)
 library(SDMTools)
 predict(datamodel, type = "response",na.action = na.exclude)
 confusion matrix
-
+confusion.matrix(dataset$variable, dataset$predictedvariable, threshold = 0.5)
+accuracyfull <- sum(diag(confMatrixModelFull)) / sum(confMatrixModelFull)

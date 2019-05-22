@@ -1,1 +1,10 @@
+#check the dataset and structure
 summary(dataset)
+str(dataset)
+
+
+#Linear Regression
+lm(  x ~ y, data = dataset)
+
+#Logistic Regression
+glm(x ~ y+z+a+b..., family = binomial

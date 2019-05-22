@@ -7,4 +7,8 @@ str(dataset)
 lm(  x ~ y, data = dataset)
 
 #Logistic Regression
-glm(x ~ y+z+a+b..., family = binomial
+glm(x ~ y+z+a+b..., family = binomial,data = dataset)
+coef
+AIC
+library(MASS)
+StepAIC(model, trace = 0)

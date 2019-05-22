@@ -12,3 +12,15 @@ coef
 AIC
 library(MASS)
 StepAIC(model, trace = 0)
+R2
+PseudoR2
+------------------------------------------------
+McFadden
+Cox n Snell
+Nagelkerke
+Reasonable if > 0.2
+Good if > 0.4
+Very good if > 0.5
+-------------------------------------------------------------
+
+

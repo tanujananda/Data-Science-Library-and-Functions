@@ -13,6 +13,7 @@ AIC
 library(MASS)
 StepAIC(model, trace = 0)
 R2
+Model Fitting :
 PseudoR2
 ------------------------------------------------
 McFadden
@@ -22,5 +23,9 @@ Reasonable if > 0.2
 Good if > 0.4
 Very good if > 0.5
 -------------------------------------------------------------
-
+library(descr)
+LogRegR2(datamodel)
+library(SDMTools)
+predict(datamodel, type = "response",na.action = na.exclude)
+confusion matrix
 

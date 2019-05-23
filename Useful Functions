@@ -44,3 +44,19 @@ costAcc <- function(r, pi = 0) {
 # Cross validated accuracy for model
 set.seed(534381)
 cv.glm(dataset, model, cost = costAcc, K = 6)$delta[1]
+
+--------------------------------------------------------------------------
+# Split data in train and test set
+set.seed(534381) 
+dataset$isTrain <- rbinom(nrow(dataset), 1, 0.66)
+train <- subset(dataset, dataset$isTrain == 1)
+test <- subset(dataset, dataset$isTrain == 0)
+
+logitTrainNew <- glm(formulaLogit, family = binomial, data = train) # Modeling  
+test$predNew <- predict(logitTrainNew, type = "response", newdata = test) # Predictions
+
+# Out-of-sample confusion matrix and accuracy
+confMatrixModelNew <- confusion.matrix(test$originalvariable, test$predNew, threshold = 0.3) 
+sum(diag(confMatrixModelNew)) / sum(confMatrixModelNew) # Compare this value to the in-sample accuracy
+
+

@@ -59,4 +59,12 @@ test$predNew <- predict(logitTrainNew, type = "response", newdata = test) # Pred
 confMatrixModelNew <- confusion.matrix(test$originalvariable, test$predNew, threshold = 0.3) 
 sum(diag(confMatrixModelNew)) / sum(confMatrixModelNew) # Compare this value to the in-sample accuracy
 
+ggplot Faceting :
+Divides graph on the facet field value.
+ggplot(dataset) +
+  geom_histogram(aes(x = datasetvariable,
+                     fill = factor(boughtAgain))) +
+  facet_grid( ~ boughtAgain) + # Separate plots for boughtAgain = 1 vs. 0
+  theme(legend.position = "none")
+
 

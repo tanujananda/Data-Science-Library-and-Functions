@@ -67,4 +67,5 @@ ggplot(dataset) +
   facet_grid( ~ boughtAgain) + # Separate plots for boughtAgain = 1 vs. 0
   theme(legend.position = "none")
 
+Survival Analysis 
 

@@ -30,3 +30,17 @@ predict(datamodel, type = "response",na.action = na.exclude)
 confusion matrix
 confusion.matrix(dataset$variable, dataset$predictedvariable, threshold = 0.5)
 accuracyfull <- sum(diag(confMatrixModelFull)) / sum(confMatrixModelFull)
+Payback matrix
+Cross validation:
+---------------------------------
+library(boot)
+# Accuracy function
+costAcc <- function(r, pi = 0) {
+  cm <- confusion.matrix(r, pi, threshold = 0.3)
+  acc <- sum(diag(cm)) / sum(cm)
+  return(acc)
+}
+
+# Cross validated accuracy for model
+set.seed(534381)
+cv.glm(dataset, model, cost = costAcc, K = 6)$delta[1]

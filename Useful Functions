@@ -69,3 +69,12 @@ ggplot(dataset) +
 
 Survival Analysis 
 
+
+
+
+SQL commands and stored procs
+
+CONVERT()
+DATEPART()
+DATENAME()
+DATEDIFF()
